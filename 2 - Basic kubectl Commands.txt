@@ -1,0 +1,17 @@
+- kubectl create deployment --image=nginx nginx-app
+- kubectl get services => Shows all services in the Kubernetes cluster.
+- kubectl get pods => Shows all running Pods in the cluster.
+- kubectl get deployments => Shows all Deployments in the cluster.
+
+
+- kubectl get all
+
+It includes:
+Pods
+Services
+Deployments
+ReplicaSets
+StatefulSets (sometimes)
+
+- kubectl scale deployment nginx-app --replicas=3
+- kubectl delete deployment --all

@@ -1,0 +1,204 @@
+Monolithic vs SOA vs Microservices :
+
+---
+
+- Monolithic (in software engineering) means a system or application built as one single unified block.
+* All components are combined and deployed together as one unit
+
+---
+
+SOA Architecture :
+Service-Oriented Architecture (SOA) is a software design approach where applications are built as a collection of independent services that communicate over a network.
+
+---
+
+Microservices Architecture:
+Microservices Architecture is an architectural style where an application is divided into small, independent services, each responsible for a specific business function.
+
+---
+
+Containers :
+A container is a lightweight, portable unit that packages an application together with all its dependencies (libraries, configuration files, runtime, etc.) so it can run consistently across different environments.
+
+---
+
+Container Orchestration :
+Container Orchestration is the automated management, deployment, scaling, networking, and monitoring of containers.
+
+When an application consists of many containers, managing them manually becomes difficult. Container orchestration tools automate these tasks.
+
+---
+
+Kubernetes as a Service (KaaS)
+- refers to a cloud-managed Kubernetes platform where the cloud provider installs, configures, and manages the Kubernetes control plane for you.
+
+Instead of setting up Kubernetes manually, you just use it as a ready-to-use service.
+
+- Amazon Web Services → EKS (Elastic Kubernetes Service)
+- Google Cloud → GKE (Google Kubernetes Engine)
+- Microsoft Azure → AKS (Azure Kubernetes Service)
+
+---
+
+Kubernetes : (K8s) is an open-source platform used to deploy, manage, scale, and automate containerized applications.
+
+It is the most popular container orchestration system and was originally developed by Google and is now maintained by the Cloud Native Computing Foundation.
+
+- Scalability
+- Self-healing
+- Automated rollouts and rollbacks
+- Secret and configuration management
+- Portability
+
+---
+
+Kubernetes Architecture :
+- Worker Node:  provides a running environment for client application
+- Pods : A Pod is the smallest deployable unit in Kubernetes. It represents one or more containers that run together on a worker node.
+
+---
+
+Worker Node Components :
+- Container Runtime
+- Node Agent (Kubelet)
+- Proxy (Kube-proxy)
+- Addons (DNS, dashboard User Interface)
+
+---
+
+Container Runtime : A container runtime is the software component that is responsible for running containers on a host machine.
+- Container Runtime Interface (CRI) :
+This allows Kubernetes to work with different runtimes like:
+containerd
+CRI-O
+
+---
+
+Node Agent (kubelet) :
+A kubelet is the main node agent in Kubernetes that runs on every worker node and ensures that containers are running correctly inside Pods.
+
+---
+
+Proxy - Kube-proxy :
+kube-proxy is a network component that runs on every Kubernetes node and is responsible for network communication between Services and Pods.
+
+kube-proxy enables:
+- Communication between Services → Pods
+- Load balancing between multiple Pods
+- Network routing inside the cluster
+
+---
+
+Kubernetes Addons
+
+Addons in Kubernetes are optional components that extend the functionality of a Kubernetes cluster.
+
+Simple idea:
+Addons = extra tools/services installed on top of Kubernetes to make it more useful
+
+---
+
+Master Node (Control Plane Node) in Kubernetes :
+A Master Node (also called Control Plane Node) is the brain of a Kubernetes cluster. It manages the entire cluster and decides what should run where.
+
+Components :
+- API Server (kube-apiserver)
+- Scheduler (kube-scheduler)
+- Controller Manager (kube-controller-manager)
+- Cloud Controller Manager
+- Data Store (etcd)
+
+---
+
+Kubernetes API Server (kube-apiserver) :
+The kube-apiserver is the central communication component of Kubernetes. It acts as the front door of the Kubernetes cluster.
+
+---
+
+Scheduler :
+The Kubernetes Scheduler is a component of the control plane that is responsible for deciding which worker node will run each Pod.
+
+---
+
+The Controller Manager is a core component of the Kubernetes control plane that is responsible for maintaining the desired state of the cluster.
+Controller Manager = the “automatic repair system” of Kubernetes
+
+---
+
+etcd (Kubernetes Data Store)
+
+etcd is a distributed key-value database used by Kubernetes to store all cluster data.
+Simple idea:
+etcd = the “memory” of Kubernetes
+
+---
+
+Kubectl :
+kubectl is the command-line tool used to interact with a Kubernetes cluster.
+
+With kubectl, you can:
+Deploy applications
+Manage Pods, Deployments, Services
+Inspect cluster resources
+Debug applications
+View logs
+
+---
+
+A Kubernetes Cluster is the complete system that runs and manages containerized applications using Kubernetes.
+
+---
+
+Pod : A Pod is the smallest and basic unit in Kubernetes that runs one or more containers.
+
+Node : A Node in Kubernetes is a machine (physical server or virtual machine) that runs applications inside a cluster.
+
+Kubernetes Cluster : A Kubernetes Cluster is a set of machines working together to run and manage containerized applications using Kubernetes.
+
+Kubernetes Namespace : A Namespace in Kubernetes is a logical way to divide a cluster into isolated virtual environments.
+
+Kubernetes Service : A Service in Kubernetes is an abstraction that exposes a group of Pods and provides a stable network endpoint.
+
+Deployment : A Deployment in Kubernetes is a resource that manages Pods and ensures the desired number of replicas are running, while also handling updates automatically.
+
+Workloads : A Workload in Kubernetes is any application or task that runs inside the cluster using Pods.
+
+Volume : A Volume in Kubernetes is a storage space attached to a Pod that allows data to be saved and shared between containers.
+
+ReplicaSet (Kubernetes) : A ReplicaSet is a Kubernetes component that ensures a specific number of identical Pods are always running.
+
+Kubernetes Ingress : is a resource that manages external HTTP/HTTPS access to services inside a cluster using routing rules.
+
+Orchestration : is the automated management, coordination, and control of containers and services in a system.
+
+---
+
+Commands :
+
+- kubectl get nodes
+is used to display all the nodes (machines) in a Kubernetes cluster.
+
+- minikube addons list
+is used to show all available Minikube addons and their status (enabled/disabled).
+
+- minikube dashboard
+is used to open the Kubernetes Dashboard (web UI) in your browser for a Minikube cluster.
+
+- minikube start
+is used to create and start a local Kubernetes cluster using Minikube.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
