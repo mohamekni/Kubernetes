@@ -1,0 +1,16 @@
+- kubectl apply -f ./helloworld-pod.yml
+
+- kubectl describe pod nginx
+ It gives a deep inspection (debug view) of a Pod.
+
+- kubectl exec -it nginx -- /bin/bash
+ It lets you enter inside the container (like SSH).
+
+- kubectl logs nginx
+It shows what the application inside the container is printing (output).
+
+- kubectl apply -f .\helloworld-pod.yml
+nginx => Configured
+
+- kubectl delete deployment --all
+ removing all pods
