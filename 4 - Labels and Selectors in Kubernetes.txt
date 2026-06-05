@@ -1,0 +1,2 @@
+Labels : 
+Labels are key-value pairs attached to Kubernetes objects used to organize, group, and select resources.
