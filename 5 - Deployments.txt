@@ -1,0 +1,6 @@
+- kubectl create deployment nginx-dep --image=nginx
+- kubectl scale deployment nginx-dep --replicas=5
+- kubectl get pod -o wide
+- minikube ssh
+- curl <IPADD>
+- kubectl describe deployment nginx-dep

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webserver
+  labels:
+    env: prod
+    owner: roucha
+    webserver: nginx
+spec:
+  containers:
+    - name: nginx
+      image: nginx:1.21.4
+      ports:
+        - containerPort: 80

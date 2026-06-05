@@ -1,2 +1,15 @@
 Labels : 
 Labels are key-value pairs attached to Kubernetes objects used to organize, group, and select resources.
+
+- kubectl apply -f nginx.yml
+- kubectl get pods
+- kubectl get pods --show-labels
+- kubectl label pod nginx owner=mohadevops
+- kubectl get pods --selector owner=mohadevops
+- kubectl get pods -l owner=mohadevops
+- kubectl label pod nginx2 release=prod
+- kubectl get pod -l release=dev
+- kubectl get pod -l release!=dev
+- kubectl get pods -l 'release in (dev, prod)'
+- kubectl get pods -l 'release in (dev), owner in (mohadevops)'
+- kubectl get pods -l 'release notin (dev)'
