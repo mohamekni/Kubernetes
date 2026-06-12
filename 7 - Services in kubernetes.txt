@@ -1,0 +1,13 @@
+A Service is a Kubernetes object that provides a stable network endpoint for accessing Pods.
+Pods are ephemeral:
+
+A Pod can crash and be recreated.
+Its IP address may change.
+
+Without a Service, clients would need to know the Pod's current IP address.
+
+A Service provides:
+
+A stable IP address
+A stable DNS name
+Load balancing between Pods

@@ -1,0 +1,20 @@
+Deployments vs Services in Kubernetes
+
+1. Deployment (Application Management)
+
+A Deployment manages Pods (application instances)
+
+- Creates Pods
+- Ensures desired number of replicas
+- Handles updates (rolling updates)
+- Handles rollback
+- Self-healing (recreates failed Pods)
+
+
+2. Service (Network Access)
+A Service exposes and connects to Pods.
+
+- Provides stable IP / DNS
+- Load balances traffic across Pods
+- Enables communication between apps
+- Exposes app externally (NodePort / LoadBalancer)

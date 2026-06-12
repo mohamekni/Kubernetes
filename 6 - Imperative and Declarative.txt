@@ -1,0 +1,42 @@
+In Kubernetes, there are two ways to manage resources:
+1. Imperative Approach
+You tell Kubernetes how to do something using commands.
+- kubectl create deployment nginx --image=nginx
+- kubectl scale deployment nginx --replicas=5
+- kubectl delete deployment nginx
+
+- Quick and simple
+- Good for testing and learning
+- No configuration file
+- Difficult to track changes
+- Not ideal for production
+
+2. Declarative Approach
+You describe the desired state in a YAML file, and Kubernetes ensures that state exists.
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+
+  template:
+    metadata:
+      labels:
+        app: nginx
+
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+
+- Configuration stored in YAML
+- Version control with Git
+- Easy updates and rollbacks
+- Best practice for production

@@ -4,3 +4,4 @@
 - minikube ssh
 - curl <IPADD>
 - kubectl describe deployment nginx-dep
+- kubectl apply -f .\deploy-file.yaml
