@@ -11,3 +11,72 @@ A Service provides:
 A stable IP address
 A stable DNS name
 Load balancing between Pods
+
+---
+
+1. ClusterIP (Default) :
+
+A Service that is only accessible inside the cluster.
+Internal communication between Pods/services
+spec:
+  type: ClusterIP
+
+Use cases:
+- Backend services
+- Databases (MongoDB, MySQL)
+- Microservice communication
+
+---
+
+2. NodePort :
+
+Exposes the Service on a static port on every Node.
+NodeIP:NodePort
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30080
+
+Use cases:
+Testing
+Development environments
+Simple external access
+
+---
+
+3. LoadBalancer
+Creates an external cloud load balancer.
+Best way to expose apps publicly in production (cloud)
+
+spec:
+  type: LoadBalancer
+Use cases:
+Production applications
+Cloud (AWS, Azure, GCP)
+
+---
+
+4. ExternalName
+Maps a Kubernetes Service to an external DNS name.
+spec:
+  type: ExternalName
+  externalName: example.com
+
+Use cases:
+Access external APIs
+Connect to third-party services
+
+| Type         | Access         | Use Case          | External Access |
+| ------------ | -------------- | ----------------- | --------------- |
+| ClusterIP    | Internal only  | Microservices     | ❌              |
+| NodePort     | Node IP + Port | Testing/dev       | ⚠️ limited      |
+| LoadBalancer | Public IP      | Production        | ✅              |
+| ExternalName | DNS mapping    | External services | ❌              |
+
+
+
+
+
+
