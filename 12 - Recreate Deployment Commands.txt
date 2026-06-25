@@ -1,0 +1,6 @@
+- kubectl apply -f .\Deployment.yaml
+- kubectl apply -f .\Service.yaml
+- minikube service recreate-service 
+- version image changed 
+- kubectl apply -f .\Deployment.yaml
+- minikube service recreate-service
