@@ -1,0 +1,57 @@
+- Docker :
+
+Docker is an open-source platform that lets developers package, distribute, and run applications in isolated environments called containers.
+
+- A container includes:
+
+Application code
+Libraries
+Dependencies
+Runtime environment
+
+--- 
+Docker Compose :
+
+Docker Compose is a tool used when an application needs multiple containers working together.
+
+Instead of starting containers one by one:
+
+docker run mysql
+docker run backend
+docker run frontend
+
+---
+Docker Swarm :
+
+Docker Swarm is Docker's orchestration system used for managing containers across multiple servers (nodes).
+
+Features:
+
+Load balancing
+High availability
+Automatic scaling
+Fault tolerance
+Service replication
+If one server fails, Docker Swarm automatically moves containers to healthy nodes.
+
+---
+
+Kubernetes (often abbreviated as K8s) is an open-source platform used to automate the deployment, management, scaling, and monitoring of containerized applications.
+
+It was originally developed by Google and is now maintained by the Cloud Native Computing Foundation.
+
+Think of it this way:
+
+Docker → creates and runs containers
+Docker Compose → runs multiple containers on one machine
+Docker Swarm → manages containers on multiple machines
+Kubernetes → manages containers at large scale across many machines with advanced automation
+
+Main features of Kubernetes :
+
+Automatic scaling → increases or decreases application instances
+Self-healing → restarts failed containers automatically
+Load balancing → distributes traffic between containers
+Rolling updates → updates applications without downtime
+Service discovery → containers find each other automatically
+High availability → keeps applications running even if a server fails

@@ -1,0 +1,11 @@
+- docker build . -t mohvmed/k8s-web-server:1.2.0
+- docker image ls 
+- docker login
+- docker push mohvmed/k8s-web-server:1.2.0  
+- kubectl get pods
+- kubectl set image deploy k8s-web-server 
+- kubectl set image deploy k8s-web-server k8s-web-server=mohvmed/k8s-web-server:1.2.0
+- kubectl rollout status deployment/k8s-web-server
+- minikube service k8s-web-server
+- kubectl set image k8s-web-server k8s-web-server=mohvmed/k8s-web-server
+- minikube service k8s-web-server

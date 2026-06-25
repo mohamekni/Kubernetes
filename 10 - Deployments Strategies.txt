@@ -1,0 +1,107 @@
+A deployment strategy is the method used to release a new version of an application into production while minimizing downtime and risk.
+
+---
+
+1. Recreate Strategy:
+
+A Recreate Deployment strategy is the simplest deployment method where Kubernetes stops all existing Pods first, then starts the new version.
+
+It means there is a short downtime period during the upgrade.
+
+---
+
+2. Rolling Deployment:
+
+A Rolling Update deployment is a deployment strategy where the application is updated gradually, replacing old instances with new ones step by step, instead of stopping everything at once.
+
+Users continue accessing the application during the update, so there is little or no downtime.
+
+Advantages:
+
+Near-zero downtime
+Safer than replacing everything at once
+Easy to automate
+Uses fewer extra resources than Blue-Green deployment
+
+Disadvantages:
+
+Old and new versions run simultaneously for some time
+Database schema changes can be difficult
+Rollback may take longer
+
+1. maxSurge :
+
+Extra Pods allowed above the desired number during update
+
+Meaning:
+Kubernetes can create extra new Pods temporarily
+Helps speed up deployment
+
+2. maxUnavailable:
+
+How many old Pods can be unavailable during update
+
+---
+
+3. Blue-Green Deployment
+
+A Blue-Green Deployment is a release strategy where you maintain two identical environments: one active (live) and one idle (new version), then switch traffic instantly between them.
+
+🔵 Blue = current production (live users)
+🟢 Green = new version (testing / staging)
+
+Advantages
+- Zero downtime deployment
+- Instant rollback (switch back to blue)
+- Safe testing before production
+- Very stable for critical systems
+
+---
+
+4. Canary Deployment
+
+A Canary Deployment is a deployment strategy where a new version of an application is released gradually to a small group of users first, before rolling it out to everyone.
+
+It is used to reduce risk when deploying new versions in production.
+
+Canary deployment is usually done using:
+
+multiple Deployments (v1 + v2)
+or service mesh tools (like Istio)
+or ingress traffic splitting
+
+Advantages
+- Low risk (only small users affected)
+- Early bug detection
+- Easy rollback (just remove canary version)
+- Real production testing
+
+---
+
+5. A/B Testing
+
+A/B Testing is a deployment and experimentation technique where you compare two versions of an application feature to see which performs better based on real user behavior.
+
+You split users into groups:
+
+🅰️ Version A (control) → original version
+🅱️ Version B (test) → new version
+
+Advantages
+- Data-driven decisions
+- Real user feedback
+- Reduces risk of bad features
+- Improves product performance
+
+6. Shadow Deployment:
+
+A Shadow Deployment is a deployment strategy where a new version of an application runs in parallel with the production version, but it does not serve real users directly.
+
+🟢 Old version → handles real users (production traffic)
+🌑 New version → receives a mirrored copy of traffic
+
+Advantages
+- Real-world testing with production traffic
+- Zero risk for users
+- Detects performance issues early
+- Validates new architecture safely
